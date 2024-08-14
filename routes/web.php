@@ -13,10 +13,7 @@ use App\Http\Controllers\HomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+route::get('/', [HomeController::class, 'index']);
 
 Route::middleware([
     'auth:sanctum',
@@ -28,4 +25,4 @@ Route::middleware([
     })->name('dashboard');
 });
 
-route::get('redirect', [HomeController::class, 'redirect']);
+route::get('/redirect', [HomeController::class, 'redirect']);
