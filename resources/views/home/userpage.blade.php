@@ -24,31 +24,31 @@
    <body>
       <div class="hero_area">
          <!-- header section strats -->
-         @include('home.header');
+         @include('home.header')
          <!-- end header section -->
          <!-- slider section -->
-         @include('home.slider');
+         @include('home.slider')
       </div>
       <!-- why section -->
-      @include('home.why');
+      @include('home.why')
       <!-- end why section -->
 
       <!-- arrival section -->
-      @include('home.newarrival');
+      @include('home.newarrival')
       <!-- end arrival section -->
 
       <!-- product section -->
-      @include('home.product');
+      @include('home.product')
       <!-- end product section -->
 
       <!-- subscribe section -->
-      @include('home.subscribe');
+      @include('home.subscribe')
       <!-- end subscribe section -->
       <!-- client section -->
-      @include('home.client');
+      @include('home.client')
       <!-- end client section -->
       <!-- footer start -->
-       @include('home.footer');
+       @include('home.footer')
       <!-- footer end -->
       <div class="cpy_">
          <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
