@@ -14,6 +14,13 @@
         .input_color{
             color: black;
         }
+        .center{
+            margin: auto;
+            width: 50%;
+            text-align: center;
+            margin-top: 30px;
+            border: 2px solid white;
+        }
     </style>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -28,16 +35,39 @@
       <!-- partial -->
         <!-- partial:partials/_navbar.html -->
         @include('admin.header')
+
         <!-- partial -->
     <div class="main-panel">
           <div class="content-wrapper">
+            @if(session()->has('message'))
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                    {{session()->get('message')}}
+                </div>
+            @endif
             <div class="div_center">
                 <h1 class="h1_font">Add Category</h1>
-                <form action="">
-                    <input type="text" name="name" class="input_color" placeholder="category name">
+                <form action="{{url('/add_category')}}" method="POST" >
+                    @csrf
+                    <input type="text" name="category_name" class="input_color" placeholder="category name">
                     <input type="submit" class="btn btn-primary" name="submit" value="Add Category">
                 </form>
-            </div>    
+            </div>
+            <table class="center">
+                <tr class="center">
+                    <td>Category</td>
+                    <td>Action</td>
+                </tr>
+                @foreach($data as $data)
+                <tr>
+                    <td>{{$data->category_name}}</td>
+                    <td>
+                    <a class="btn btn-warning" href="">Edit</a>
+                    <a onclick="return confirm('Delete Category')" class="btn btn-danger" href="{{url('delete_category', $data->id)}}">Delete</a>
+                    </td>
+                </tr>
+                @endforeach
+            </table>
         </div>
     </div>
 
