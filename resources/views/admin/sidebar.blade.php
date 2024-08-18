@@ -72,10 +72,10 @@
               <span class="menu-title">Products</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
+            <div class="" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{{url('/view_product')}}">Add Product</a></li>
-                <li class="nav-item"> <a class="nav-link" href="">All Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/add_product')}}">Add Product</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{url('/show_products')}}">All Products</a></li>
               </ul>
             </div>
           </li>
