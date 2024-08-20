@@ -67,13 +67,16 @@ class AdminController extends Controller
         return redirect()->back()->with('message','Product deleted successfully');            
     } 
 
-        public function update_product(Request $request ,$id){
+    public function update_product(Request $request ,$id){
         $product = Product::find($id);
 
         $image = $request->image;
-        $imagetitle=time().'.'.$image->getClientOriginalExtension();
-        $request->image->move('product_image', $imagetitle);
-        $product->image = $imagetitle;
+        if($image){
+            $imagetitle=time().'.'.$image->getClientOriginalExtension();
+            $request->image->move('product_image', $imagetitle);
+            $product->image = $imagetitle;
+        }
+        
 
         $product->title = $request->title;
         $product->description = $request->description;

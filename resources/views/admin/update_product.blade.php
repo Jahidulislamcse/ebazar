@@ -87,8 +87,8 @@
                     </div>
 
                     <div class="div_design">
-                        <label for="">Change Image</label>
-                        <input type="file" name="image" required="">
+                        <label for="">Choose new Image</label>
+                        <input type="file" name="image">
                     </div>
 
                     <div class="div_design">
